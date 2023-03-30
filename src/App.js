@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import ReactDOM from "react-dom";
+
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function Lab06App() {
     </main>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById("react-lab"));
 
 
 export default App;
