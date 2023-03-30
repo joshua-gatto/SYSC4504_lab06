@@ -32,6 +32,11 @@ const Title = function(props) {
 class Catalog extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      filename: 'images/img1.jpg',
+      alt: 'image 1',
+      editing: false
+    };
   }
 }
 
