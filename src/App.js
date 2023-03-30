@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
@@ -21,5 +22,14 @@ function App() {
     </div>
   );
 }
+
+function Lab06App() {
+  return (
+    <main>
+      {/* add other components here */}
+    </main>
+  );
+}
+
 
 export default App;
