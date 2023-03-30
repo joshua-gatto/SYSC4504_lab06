@@ -37,13 +37,24 @@ class Catalog extends React.Component {
       alt: 'image 1'
     };
   }
+
+  renderNormal(){
+    return (
+      <div>
+        <h2>{this.state.alt}</h2>
+        <img src={this.state.filename} alt={this.state.alt} />
+      </div>
+    );
+  }
 }
 
 function Lab06App() {
   return (
     <main>
+      <div>
       <Title title = "Lab06 – React Application"/>
       <Catalog Catalog />
+      </div>
     </main>
   );
 }
