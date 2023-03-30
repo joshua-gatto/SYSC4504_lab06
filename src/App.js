@@ -28,12 +28,9 @@ function App() {
 function Lab06App() {
   return (
     <main>
-      {/* add other components here */}
+      const root = ReactDOM.createRoot(document.getElementById("react-lab"));
     </main>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById("react-lab"));
-
 
 export default App;
