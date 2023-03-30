@@ -29,6 +29,7 @@ function Lab06App() {
   return (
     <main>
       const root = ReactDOM.createRoot(document.getElementById("react-lab"));
+      root.render(<Lab06App />);
     </main>
   );
 }
