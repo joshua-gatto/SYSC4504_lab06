@@ -29,12 +29,15 @@ const Title = function(props) {
   return <h1>{props.title}</h1>;
 }
 
+const Catalog = function(props) {
+  return ;
+}
+
 function Lab06App() {
   return (
     <main>
-      {
-      root.render(<Title title = "Lab06 – React Application"/>)
-      }
+      <Title title = "Lab06 – React Application"/>
+      <Catalog Catalog />
     </main>
   );
 }
