@@ -30,7 +30,7 @@ const Title = function(props) {
 }
 
 class Catalog extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       filename: 'images/img1.jpg',
@@ -38,7 +38,7 @@ class Catalog extends React.Component {
     };
   }
 
-  renderNormal(){
+  renderNormal() {
     return (
       <div>
         <h2>{this.state.alt}</h2>
@@ -46,8 +46,27 @@ class Catalog extends React.Component {
       </div>
     );
   }
+
+  renderEdit() {
+    return (
+      <div>
+        <p>
+          <select value={this.state.filename} onChange={this.handleNameChange}>
+            <option value="images/img1.jpg">Image 1</option>
+            <option value="images/img2.jpg">Image 2</option>
+            <option value="images/img3.jpg">Image 3</option>
+            <option value="images/img4.jpg">Image 4</option>
+          </select>
+        </p>
+        <p>
+          <input type="text" value={this.state.alt} onChange={this.handleAltChange} />
+        </p>
+        <button onClick={this.saveClick}>Save</button>
+      </div>
+    );
+  }
   
-  render(){
+  render() {
     return this.renderNormal()
   }
 }
