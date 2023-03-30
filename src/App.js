@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
 
 function App() {
@@ -25,13 +25,21 @@ function App() {
   );
 }
 
+const Title = function(props) {
+  return <h1>{props.title}</h1>;
+}
+
 function Lab06App() {
   return (
     <main>
-      const root = ReactDOM.createRoot(document.getElementById("react-lab"));
-      root.render(<Lab06App />);
+      {
+      root.render(<Title title = "Lab06 – React Application"/>)
+      }
     </main>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('react-lab'));
+root.render(<Lab06App />)
 
 export default App;
