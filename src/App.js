@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" onClick={this.editClick}/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -34,11 +34,14 @@ class Catalog extends React.Component {
     super(props);
     this.state = {
       filename: 'images/img1.jpg',
-      alt: 'image 1'
+      alt: 'image 1',
+      editing: false
     };
 
     this.renderNormal = this.renderNormal.bind(this);
     this.renderEdit = this.renderEdit.bind(this);
+    this.editClick = this.editClick.bind(this);
+    this.saveClick = this.saveClick.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleAltChange = this.handleAltChange.bind(this);
 
@@ -49,6 +52,7 @@ class Catalog extends React.Component {
       <div>
         <h2>{this.state.alt}</h2>
         <img src={this.state.filename} alt={this.state.alt} />
+        <button onClick={this.editClick}>Toggle Edit Mode</button>
       </div>
     );
   }
@@ -67,24 +71,36 @@ class Catalog extends React.Component {
         </p>
         <p>
           <label for="alt">Alt: </label>
-          <input name="alt" type="text" value={this.state.alt}/>
+          <input name="alt" type="text" value={this.state.alt} onInput={this.handleAltChange}/>
         </p>
-        <button onClick={this.handleAltChange}>Save</button>
+        <button onClick={this.saveClick}>Save</button>
       </div>
     );
   }
 
 
-  handleAltChange(event){
+  handleAltChange(event) {
     this.setState({alt: event.target.value});
   }
 
   handleNameChange(event) {
     this.setState({filename: event.target.value});
   }
-  
+
+  editClick() {
+    this.setState({editing: true});
+  }
+
+  saveClick() {
+    this.setState({editing: false});
+  }
+
   render() {
-    return this.renderEdit()
+    if (this.state.editing) {
+      return this.renderEdit();
+    } else {
+      return this.renderNormal();
+    }
   }
 }
 
