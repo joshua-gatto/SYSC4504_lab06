@@ -29,8 +29,10 @@ const Title = function(props) {
   return <h1>{props.title}</h1>;
 }
 
-const Catalog = function(props) {
-  return ;
+class Catalog extends React.Component {
+  constructor(props){
+    super(props);
+  }
 }
 
 function Lab06App() {
