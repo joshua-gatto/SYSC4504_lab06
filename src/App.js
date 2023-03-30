@@ -25,18 +25,21 @@ function App() {
   );
 }
 
-function Title(props) {
+const Title = function(props) {
   return <h1>{props.title}</h1>;
 }
 
 function Lab06App() {
   return (
     <main>
-      <Title title="Lab06 – React Application" />
+      {
+      root.render(<Title title = "Lab06 – React Application"/>)
+      }
     </main>
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('react-lab'));
+root.render(<Lab06App />)
 
 export default App;
