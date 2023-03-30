@@ -34,8 +34,7 @@ class Catalog extends React.Component {
     super(props);
     this.state = {
       filename: 'images/img1.jpg',
-      alt: 'image 1',
-      editing: false
+      alt: 'image 1'
     };
   }
 }
