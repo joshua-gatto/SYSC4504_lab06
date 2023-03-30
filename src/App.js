@@ -46,6 +46,10 @@ class Catalog extends React.Component {
       </div>
     );
   }
+  
+  render(){
+    return this.renderNormal()
+  }
 }
 
 function Lab06App() {
